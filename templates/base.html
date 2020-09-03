@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
 </head>
-<body>
-    <div>
-        <a href="{{ url_for('notes') }}" style="margin-right: 10px;">Notes</a>
-        <a href="{{ url_for('addnote') }}">Add note <i class="fas fa-plus"></i></a>
+<body style="background-color: rgb(62, 62, 62);">
+    <div style="background-color: rgb(62, 62, 62);">
+        <a href="{{ url_for('notes') }}" style="margin-right: 10px;"><button style="background-color: rgb(103, 103, 103); color: white; border: transparent; border-radius: 3px; font-size: 14px; padding: 4px;"><i class="far fa-sticky-note"></i></button></a>
+        <a href="{{ url_for('addnote') }}" style="color: white;"><button style="background-color: rgb(103, 103, 103); color: white; border: transparent; border-radius: 3px; font-size: 14px; padding: 4px;"><i class="fas fa-plus"></i></a></button>
     </div>
     {% block notes %}{% endblock %}
     {% block addnotes %}{% endblock %}

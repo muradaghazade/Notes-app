@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 # from models import Note
 
 app = Flask(__name__)
@@ -10,10 +11,12 @@ class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
     text = db.Column(db.String(500), nullable=False)
+    addedat = db.Column(db.DateTime, nullable = False)
 
-    def __init__(self, title, text):
+    def __init__(self, title, text, addedat):
         self.title = title
         self.text = text
+        self.addedat = addedat
 
 @app.route('/notes')
 def notes():
@@ -33,7 +36,8 @@ def addnote():
     else:
         title = request.form['title']
         text = request.form['text']
-        note = Note(title, text)
+        addedat = datetime.now()     
+        note = Note(title, text, addedat)
         db.session.add(note)
         db.session.commit()
         return redirect(url_for('notes'))
