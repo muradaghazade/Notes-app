@@ -5,10 +5,10 @@
     <div class="container-fluid">
         <div class="row">
                 {% for note in notes %}
-                <a href="/notetext/{{ note.id }}" style="color: black; text-decoration: none;"><div style="border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6;">
+                <a href="/notetext/{{ note.id }}" style="color: black; text-decoration: none;"><div style="border-top: 1px solid rgb(37, 37, 37); border-bottom: 1px solid rgb(37, 37, 37);">
                     <h1 style="color: rgb(202, 149, 55);">{{ note.title }}</h1>
                     <small style="color: white;">{{ note.addedat.year }}/{{ note.addedat.month }}/{{ note.addedat.day }}   {{ note.addedat.hour }}:{{ note.addedat.minute }}</small>
-                    <a href="/deletenote/{{ note.id }}" style="margin-left: 7px;"><i class="fas fa-trash-alt"></i></a>
+                    <a href="/deletenote/{{ note.id }}" style="margin-left: 7px; color: rgb(202, 149, 55);"><i class="fas fa-trash-alt"></i></a>
                 </div></a>
                 {% endfor %}
         </div>

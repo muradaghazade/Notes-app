@@ -18,6 +18,10 @@ class Note(db.Model):
         self.text = text
         self.addedat = addedat
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/notes')
 def notes():
     notes = Note.query.all()

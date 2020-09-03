@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block addnotes %}
-<div>
+<div style="display: table-caption; padding-top: 10px;">
     <form method="POST" action="{{ url_for('addnote') }}">
-        <input type="text" name="title" placeholder="Title">
-        <textarea name="text" id="" cols="30" rows="10"></textarea>
-        <button type="submit">Submit</button>
+        <input type="text" name="title" placeholder="Title" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px;">
+        <textarea style="width: 200%; color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; margin-top: 10px;" name="text" id="" cols="30" rows="10"></textarea>
+        <button type="submit" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px;">Submit</button>
     </form>  
 </div>
 {% endblock %}
