@@ -3,8 +3,10 @@
 {% block addnotes %}
 <div style="display: table-caption; padding-top: 10px;">
     <form method="POST" action="{{ url_for('addnote') }}">
-        <input type="text" name="title" placeholder="Title" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px;">
-        <textarea style="width: 200%; color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; margin-top: 10px;" name="text" id="" cols="30" rows="10"></textarea>
+        <h1 style="color: rgb(202, 149, 55);">Enter Title</h1>
+        <input type="text" name="title" placeholder="Title" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; height: 30px;">
+        <h1 style="color: rgb(202, 149, 55);">Enter Text</h1>
+        <textarea style="width: 544px; height: 117px; color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; margin-top: 10px;" name="text" id="" cols="30" rows="10"></textarea>
         <button type="submit" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px;">Submit</button>
     </form>  
 </div>
