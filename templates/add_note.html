@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block addnotes %}
+<div>
+    <form method="POST" action="{{ url_for('addnote') }}">
+        <input type="text" name="title" placeholder="Title">
+        <textarea name="text" id="" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+    </form>  
+</div>
+{% endblock %}

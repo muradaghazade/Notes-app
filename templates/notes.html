@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block notes %}
+<div class="main">
+    <div class="container-fluid">
+        <div class="row">
+                {% for note in notes %}
+                <a href="/notetext/{{ note.id }}" style="color: black;"><div style="border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6;">
+                    <h1>{{ note.title }}</h1>
+                    <a href="/deletenote/{{ note.id }}"><i class="fas fa-trash-alt"></i></a>
+                </div></a>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
