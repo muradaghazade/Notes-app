@@ -3,11 +3,12 @@
 {% block addnotes %}
 <div style="display: table-caption; padding-top: 10px;">
     <form method="POST" action="{{ url_for('addnote') }}">
-        <h1 style="color: rgb(202, 149, 55);">Enter Title</h1>
-        <input type="text" name="title" placeholder="Title" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; height: 30px;">
-        <h1 style="color: rgb(202, 149, 55);">Enter Text</h1>
-        <textarea style="width: 544px; height: 117px; color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; margin-top: 10px;" name="text" id="" cols="30" rows="10"></textarea>
-        <button type="submit" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px;">Submit</button>
+        <h1 style="color: rgb(226, 185, 56);">Enter Title</h1>
+        <input type="text" name="title" value="{{ notes.title }}" placeholder="Title" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; height: 30px;">
+        <h1 style="color: rgb(226, 185, 56);">Enter Text</h1>
+        <textarea style="width: 544px; height: 117px; color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; margin-top: 10px;" name="text" id="" cols="30" rows="10">{{ notes.text }}</textarea>
+        <button type="submit" style="color: white; background-color: rgb(62, 62, 62); border: transparent; border-radius: 5px; padding: 7px; margin-top: 10px;">Save</button>
+        <p style="color: red;">Warning! Do not forget to save!</p>
     </form>  
 </div>
 {% endblock %}

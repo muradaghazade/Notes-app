@@ -8,12 +8,14 @@
 </head>
 <body style="background-color: rgb(30, 30, 30); color: white;">
     <div style="background-color: rgb(62, 62, 62); padding: 5px; border-radius: 3px;">
+        <a href="{{ url_for('notes') }}" style="margin-right: 10px;"><button style="background-color: rgb(103, 103, 103); color: white; border: transparent; border-radius: 3px; font-size: 14px; padding: 4px;"><i class="fas fa-chevron-left"></i></button></a>
         <a href="{{ url_for('notes') }}" style="margin-right: 10px;"><button style="background-color: rgb(103, 103, 103); color: white; border: transparent; border-radius: 3px; font-size: 14px; padding: 4px;"><i class="far fa-sticky-note"></i></button></a>
         <a href="{{ url_for('addnote') }}" style="color: white;"><button style="background-color: rgb(103, 103, 103); color: white; border: transparent; border-radius: 3px; font-size: 14px; padding: 4px;"><i class="fas fa-plus"></i></a></button>
     </div>
     {% block greet %}{% endblock %}
     {% block notes %}{% endblock %}
     {% block addnotes %}{% endblock %}
+    {% block editnote %}{% endblock %}
     
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

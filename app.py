@@ -35,8 +35,9 @@ def notetext(id):
 
 @app.route('/addnote', methods = ['GET', 'POST'])
 def addnote():
+    notes = {'title': '', 'text': ''}
     if request.method == 'GET':
-        return render_template('add_note.html')
+        return render_template('add_note.html', notes=notes)
     else:
         title = request.form['title']
         text = request.form['text']
@@ -45,6 +46,23 @@ def addnote():
         db.session.add(note)
         db.session.commit()
         return redirect(url_for('notes'))
+
+@app.route('/editnote/<int:id>', methods = ['GET', 'POST'])
+def editnote(id):
+    notes = Note.query.get(id)
+    db.session.delete(notes)
+    db.session.commit()
+    if request.method == 'GET':
+        return render_template('add_note.html', notes=notes)
+    else:
+        title = request.form['title']
+        text = request.form['text']
+        addedat = datetime.now()     
+        note = Note(title, text, addedat, id)
+        db.session.add(note)
+        db.session.commit()
+        return redirect(url_for('notetext'))
+        
 
 
 @app.route('/deletenote/<int:id>')
